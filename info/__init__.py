@@ -6,7 +6,7 @@ from flask_session import Session
 from config import configs
 import logging
 from logging.handlers import RotatingFileHandler
-from info.modules.index import index_blue
+
 
 
 def setup_log(level):
