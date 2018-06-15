@@ -8,7 +8,6 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
-
 def setup_log(level):
     """根据创建app时的配置环境，加载日志等级"""
     # 设置⽇日志的记录等级
@@ -50,5 +49,8 @@ def create_app(config_name):
     # 注意点：蓝图在哪里使用，注册，就在哪里导入，避免出现由于蓝图导入过早，造成变量不存在的情况
     from info.modules.index import index_blue
     app.register_blueprint(index_blue)
+    from info.modules.passport import passport_blue
+    app.register_blueprint(passport_blue)
+
     return app
 
